@@ -21,16 +21,16 @@ else
 
 # Downloading OVF tool from repository
 
-        cd /root
+	cd /root
 
         if ping -q -c 1 -W 1 8.8.8.8 &> /dev/null;
         then
-        printf "Downloading OVF Tool\n"
-        wget https://www.dropbox.com/s/wihvc41gzfl7ca8/VMware-ovftool-4.2.0-4586971-lin.x86_64.bundle?dl=0 -O /root/VMware-ovftool-4.2.0-4586971-lin.x86_64.bundle -q
-                echo
+        	printf "Downloading OVF Tool\n"
+        	wget https://www.dropbox.com/s/wihvc41gzfl7ca8/VMware-ovftool-4.2.0-4586971-lin.x86_64.bundle?dl=0 -O /root/VMware-ovftool-4.2.0-4586971-lin.x86_64.bundle -q
+        	echo
         else
-        printf "No network connection. Download OVF tool manually and install it on this appliance"
-        exit 1
+        	printf "No network connection. Download OVF tool manually and install it on this appliance"
+        	exit 1
         fi
 
 # Install OVF tool
@@ -72,7 +72,7 @@ else
         printf "\nPerforming Deployment\n\n"
         ovftool --acceptAllEulas -ds="$datastore_name" -n="$display_name" --net:"Management Network"="$network_group" --prop:"password"=$root_password --prop:"ntpserver"="$ntp_address" --prop:"vami.ip0.vSphere_Replication_Appliance"="$replication_address" --vService:installation=com.vmware.vim.vsm:extension_vservice /mnt/iso/bin/vSphere_Replication_OVF10.ovf vi://"$sso_user":$sso_password@$vcenter_address/?ip=$esxi_address
 		
-		printf "\n\nDeployment Complete\nExiting Script\n\n"
+	printf "\n\nDeployment Complete\nExiting Script\n\n"
 fi
 
 
