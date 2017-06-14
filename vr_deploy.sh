@@ -59,8 +59,8 @@ else
         echo #New Line
         read -p "Enter the IP of the vCenter Server in which the appliance should be deployed: " vcenter_address
         echo #New Line
-		read -p "Enter the IP of the ESXi host where this appliance should run on: "  esxi_address
-		echo #New Line
+	read -p "Enter the IP of the ESXi host where this appliance should run on: "  esxi_address
+	echo #New Line
         read -p "Enter the SSO username for the vCenter server this vR will be deployed on: " sso_user
         echo #New Line
         read -p "Enter the password for this SSO user: " sso_password
